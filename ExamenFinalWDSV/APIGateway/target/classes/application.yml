@@ -1,0 +1,33 @@
+server:
+  port: 6002
+
+jwt:
+  secret: Bx4MeizkOfmx5buS0AeRdfWkK1H4GI8abShDqtZq6gA=
+
+spring:
+  application:
+    name: appgateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      
+      # Filtros por defecto: espacio después de "-" 
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+      # Rutas: espacio después de "-"
+      routes:
+        - id: MsVenta
+          uri: http://localhost:86
+          predicates:
+            - Path=/venta/**
