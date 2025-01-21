@@ -1,27 +1,25 @@
 package com.example.MsSeguridad.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+// (Opcional) Para mapear nombres de campo si difieren de tu variable
+// import org.springframework.data.mongodb.core.mapping.Field;
 
-@Entity
-@Table(name = "access")
+@Document(collection = "auth")  // Con esto indicas la colección de Mongo
 public class AcessModel {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
-    private Integer id_user;    
 
-    @Column(name = "username")
+    @Id
+    // Normalmente en Mongo se usa una cadena u ObjectId para el _id,
+    // pero si deseas mantenerlo como Integer, es posible, aunque menos común.
+    private Integer id_user;
+
+    // @Field("username") // Sólo si quieres un nombre distinto en la colección
     private String username;
 
-    @Column(name = "password")
+    // @Field("password")
     private String password;
 
+    // Getters y Setters
     public Integer getId_user() {
         return id_user;
     }
@@ -41,9 +39,8 @@ public class AcessModel {
     public String getPassword() {
         return password;
     }
-
+    
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
