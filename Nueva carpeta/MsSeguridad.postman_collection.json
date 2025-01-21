@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "1128e7ba-4e3d-406b-bcc9-96d9199d5424",
+		"name": "MsSeguridad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31189613"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:86/venta/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "86",
+					"path": [
+						"venta",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"producto\": \"pipo\",\r\n  \"cantidad\": 10,\r\n  \"precio\": 99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:86/venta/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "86",
+					"path": [
+						"venta",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
