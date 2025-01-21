@@ -12,15 +12,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:86/venta/findAll",
+					"raw": "http://localhost:85/api/auth",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "86",
+					"port": "85",
 					"path": [
-						"venta",
-						"findAll"
+						"api",
+						"auth"
 					]
 				}
 			},
@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"producto\": \"pipo\",\r\n  \"cantidad\": 10,\r\n  \"precio\": 99\r\n}",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,15 +41,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:86/venta/create",
+					"raw": "http://localhost:85/api/auth",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "86",
+					"port": "85",
 					"path": [
-						"venta",
-						"create"
+						"api",
+						"auth"
 					]
 				}
 			},
